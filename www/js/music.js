@@ -17,15 +17,23 @@ $( document ).delegate("#music", "pageshow", function() {
          var json = $.xml2json(data);
          var event_date = '';
          $('#music-list').empty();
-         $.each(json.event, function(index, value) { 
-               if (event_date!=value.event_date) {
-                  $('#music-list').append('<li data-role="list-divider">' + value.event_date + '</li>');
-                  event_date = value.event_date;
-               }
-               var artists = jQuery.makeArray(value.artists);
-               var artist = jQuery.makeArray(artists[0].artist);
-               $('#music-list').append('<li><a href="' + value.event_url + '">' + artist[0].artist_name + ' @ ' + value.venue.venue_name + '</a></li>');
-         });
+         if (typeof json.event.event_date === "undefined") {
+            $.each(json.event, function(index, value) {
+                  if (event_date!=value.event_date) {
+                     $('#music-list').append('<li data-role="list-divider">' + value.event_date + '</li>');
+                     event_date = value.event_date;
+                  }
+                  var artists = jQuery.makeArray(value.artists);
+                  var artist = jQuery.makeArray(artists[0].artist);
+                  $('#music-list').append('<li><a href="' + value.event_url + '">' + artist[0].artist_name + ' @ ' + value.venue.venue_name + '</a></li>');
+            });
+         } else {
+            var value = json.event;
+            $('#music-list').append('<li data-role="list-divider">' + value.event_date + '</li>');
+            var artists = jQuery.makeArray(value.artists);
+            var artist = jQuery.makeArray(artists[0].artist);
+            $('#music-list').append('<li><a href="' + value.event_url + '">' + artist[0].artist_name + ' @ ' + value.venue.venue_name + '</a></li>');
+         }
          $('#music-list').listview('refresh');
          $.mobile.hidePageLoadingMsg();
       },
