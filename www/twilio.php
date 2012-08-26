@@ -8,7 +8,7 @@ if(isset($_POST['body'])){
     $zip = '';
 }
 // encode long url for use with the bitly api.
-$longurl = 'http://coderfair.seanmumford.com/index.html?zip=' . $zip;
+$longurl = 'http://coderfaire.seanmumford.com/index.html?zip=' . $zip;
 
 // use api to get shortened url.
 $shorturl = bitly_v3_shorten($longurl);

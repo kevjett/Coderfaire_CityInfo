@@ -10,16 +10,13 @@ $( document ).delegate("#weather", "pageshow", function() {
   	type: 'get',
 	url: 'proxy.php',
 	data: {
-		proxy_url: 'http://i.wxbug.net/REST/Direct/GetForecastHourly.ashx',
-		zip: '37027',
-		ht: 't',
-		ht: 'i',
-		ht: 'd',
-		api_key: 'umwv5ngjpwxd8pqspmuq6cmr'
+		proxy_url: 'http://i.wxbug.net/REST/Direct/GetObs.ashx?zip=37027&ic=1&api_key=ngh3w72jsxp43xp4wkpy33ym'
 	},
+	
 	success: function( data ){
-		alert( 'I got a response' );
-	}
+		$('#wx_conditions').html( data.desc );
+	},
+	dataType: 'json'
 
   });
   
