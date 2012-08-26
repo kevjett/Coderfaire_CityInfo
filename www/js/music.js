@@ -9,10 +9,12 @@
 	   $('#music-list').append('<li>Item ' + index + '</li>');
 	});
    $('#music-list').listview('refresh');
+   $.mobile.hidePageLoadingMsg();
  }
 
 
 function getValues(){
+		$.mobile.showPageLoadingMsg();
          $.ajax({
             url: 'proxy.php',
             type: 'GET',
