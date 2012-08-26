@@ -6,9 +6,9 @@ $( document ).delegate("#weather", "pageshow", function() {
   
   // Do stuff for this page here.
   
-  $.ajax(
+  $.ajax({
   	type: 'get',
-	url: '/proxy.php',
+	url: 'proxy.php',
 	data: {
 		proxy_url: 'http://i.wxbug.net/REST/Direct/GetForecastHourly.ashx',
 		zip: '37027',
@@ -20,6 +20,7 @@ $( document ).delegate("#weather", "pageshow", function() {
 	success: function( data ){
 		alert( 'I got a response' );
 	}
-	
+
+  });
   
 });
