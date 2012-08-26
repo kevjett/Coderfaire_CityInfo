@@ -3,9 +3,13 @@
 // This file has to be included in the head of index.html
 
 $( document ).delegate("#movieTimes", "pageshow", function() {
+    $.mobile.showPageLoadingMsg();
+    getTheatersNearMe();
+});
+
+function getTheatersNearMe() {
     var $movieList = $('#movies-list');
     $movieList.empty();
-    $.mobile.showPageLoadingMsg();
     if(!zip) {
         zip = 37203;
     }
@@ -16,16 +20,17 @@ $( document ).delegate("#movieTimes", "pageshow", function() {
         var json = $.xml2json(response);
         displayTheatersNearMe(json.channel.item);
     })
-  
-    function displayTheatersNearMe(json) {
-        $.each(json, function(i, item) {
-            var desc = '<div>' + item.description + '</div>';
-            var address = '';
-            var movies = $(desc).find('ul').html();
-            
-            $movieList.append('<li>' + item.title + address + '<ul class="details" data-role="listview">'+movies+'</ul></li>');
-        });
-        $movieList.listview('refresh');
-        $.mobile.hidePageLoadingMsg();
-    } 
-});
+}
+
+function displayTheatersNearMe(json) {
+    var $movieList = $('#movies-list');
+    $.each(json, function(i, item) {
+        var desc = '<div>' + item.description + '</div>';
+        var address = '';
+        var movies = $(desc).find('ul').html();
+
+        $movieList.append('<li>' + item.title + address + '<ul class="details" data-role="listview">'+movies+'</ul></li>');
+    });
+    $movieList.listview('refresh');
+    $.mobile.hidePageLoadingMsg();
+}
