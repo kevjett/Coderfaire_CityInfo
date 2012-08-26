@@ -11,6 +11,10 @@ Mashery API
 username: coderfaire
 password: C0d3rF@ire
 
+Twilio number
+============
+text zip to 615-239-1419
+
 API Keys
 ============
 Rotten Tomatoes: 9rupjwbq4xe9ha8e44em8j6a
