@@ -2,10 +2,13 @@
 include_once('bitly.php');
 
 // trim off spaces
-$zip = trim($_POST['body']);
-
+if(isset($_POST['body'])){
+    $zip = trim($_POST['body']);
+} else {
+    $zip = '';
+}
 // encode long url for use with the bitly api.
-$longurl = urlencode('http://coderfair.seanmumford.com/index.html?zip=' . $zip);
+$longurl = 'http://coderfair.seanmumford.com/index.html?zip=' . $zip;
 
 // use api to get shortened url.
 $shorturl = bitly_v3_shorten($longurl);
