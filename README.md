@@ -27,6 +27,8 @@ Active.com: 3cv6ddx56q9txezrxb7vjjvf
 
 Weatherbug.com: ngh3w72jsxp43xp4wkpy33ym
 
+7 Day: http://i.wxbug.net/REST/Direct/GetForecast.ashx?zip=37027&nf=1&ih=1&ht=t&ht=i&l=en&c=US&api_key=ngh3w72jsxp43xp4wkpy33ym
+
 http://i.wxbug.net/REST/Direct/GetObs.ashx?zip=21044,61820,90210&ic=1&api_key=ngh3w72jsxp43xp4wkpy33ym
 
 Returns:
