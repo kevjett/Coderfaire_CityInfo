@@ -6,7 +6,7 @@ $( document ).delegate("#weather", "pageshow", function() {
   
   // Do stuff for this page here.
   $.mobile.showPageLoadingMsg();
-  
+  $('#weather-days').empty();
   $.ajax({
   	type: 'get',
 	url: 'proxy.php',
