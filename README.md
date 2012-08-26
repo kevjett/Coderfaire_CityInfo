@@ -29,6 +29,8 @@ ESPN: hbmdb4m9qffkentusxkw4n7j shared secret: RMEa3DJAzAMrEXj8N2XBNcDK
 
 Active.com Search: 7mrkcvgjeaj69n7hyaqd93ne
 
+Active.com Activity Details: 3cv6ddx56q9txezrxb7vjjvf
+
 Active.com Golf: 5rddyevhd976bc88pyjpghc9
 
 Weatherbug.com: ngh3w72jsxp43xp4wkpy33ym
