@@ -15,5 +15,5 @@ header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-<Sms><?php print_r($shorturl) ?></Sms>
+<Sms><?php echo $result['url']; ?></Sms>
 </Response>
