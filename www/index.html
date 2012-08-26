@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
 <title>CoderFaire City Info</title>
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
 <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -32,19 +33,19 @@
 	</div>
 </div>
 
-<div data-role="page" id="weather">
+<div data-role="page" id="weather" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Weather</h1>
 	</div>
 	<div data-role="content">	
-		<p><b>Conditions:</b> <span id="wx_conditions"></span>
+            <ul id="weather-days" data-role="listview">
+            </ul>
+     
 	</div>
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div>
+	
 </div>
 
-<div data-role="page" id="movieTimes">
+<div data-role="page" id="movieTimes" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Movie Times</h1>
 	</div>
@@ -57,7 +58,7 @@
 	</div>
 </div>
 
-<div data-role="page" id="music">
+<div data-role="page" id="music" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Music</h1>
 	</div>
@@ -67,7 +68,7 @@
 	</div>
 </div>
 
-<div data-role="page" id="sportingEvents">
+<div data-role="page" id="sportingEvents" data-add-back-btn="true">
 	<div data-role="header">
 		<h1>Sporting Events</h1>
 	</div>
