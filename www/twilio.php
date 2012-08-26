@@ -2,8 +2,8 @@
 include_once('bitly.php');
 
 // trim off spaces
-if(isset($_POST['body'])){
-    $zip = trim($_POST['body']);
+if(isset($_POST['Body'])){
+    $zip = trim($_POST['Body']);
 } else {
     $zip = '';
 }
