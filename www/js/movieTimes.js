@@ -3,8 +3,16 @@
 // This file has to be included in the head of index.html
 
 $( document ).delegate("#movieTimes", "pageshow", function() {
-    var zip = '37027';
+    $.mobile.showPageLoadingMsg();
+    getTheatersNearMe();
+});
+
+function getTheatersNearMe() {
     var $movieList = $('#movies-list');
+    $movieList.empty();
+    if(!zip) {
+        zip = 37203;
+    }
     var data = {
         proxy_url: 'http://www.fandango.com/rss/moviesnearme_' + zip + '.rss'
     };
@@ -12,16 +20,17 @@ $( document ).delegate("#movieTimes", "pageshow", function() {
         var json = $.xml2json(response);
         displayTheatersNearMe(json.channel.item);
     })
-  
-    function displayTheatersNearMe(json) {
-        $.each(json, function(index, item) {
-            var desc = '<div>' + item.description + '</div>';
-            //TODO: Display this and link to google maps
-            //var address = ': ' + $(desc).find('p:first').text();
-            var address = '';
-            var movies = $(desc).find('ul').html();
-            $movieList.append('<li>' + item.title + address + '<ul class="details" data-role="listview" style="display:none">'+movies+'</ul></li>');
-        });
-        $movieList.listview('refresh');
-    } 
-});
+}
+
+function displayTheatersNearMe(json) {
+    var $movieList = $('#movies-list');
+    $.each(json, function(i, item) {
+        var desc = '<div>' + item.description + '</div>';
+        var address = '';
+        var movies = $(desc).find('ul').html();
+
+        $movieList.append('<li>' + item.title + address + '<ul class="details" data-role="listview">'+movies+'</ul></li>');
+    });
+    $movieList.listview('refresh');
+    $.mobile.hidePageLoadingMsg();
+}

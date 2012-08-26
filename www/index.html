@@ -41,7 +41,21 @@
 
 		$( document ).delegate("#homepage", "pageshow", function() {
 		 $('#city-name').text(zip);
+		 
+		 $.ajax({
+			type: 'get',
+			url: 'proxy.php',
+			data: {
+				proxy_url: 'http://i.wxbug.net/REST/Direct/GetLocation.ashx?zip=' + zip + '&api_key=ngh3w72jsxp43xp4wkpy33ym'
+			},
+			
+			success: function( data ){
+				$('#city-name').text( data.location.city + ', ' + data.location.state )
+			},
+			dataType: 'json'
+		 
 		});
+	});
 		
 	</script>
 <div data-role="page" id="homepage">
@@ -57,9 +71,7 @@
 			<li><a href="#runningEvents">Running Events</a></li>
 		</ul>		
 	</div>
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div>
+	
 </div>
 
 <div data-role="page" id="weather" data-add-back-btn="true">
@@ -82,9 +94,7 @@
 		<ul id="movies-list" data-role="listview">
 		</ul>
 	</div>
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div>
+	
 </div>
 
 <div data-role="page" id="music" data-add-back-btn="true">
