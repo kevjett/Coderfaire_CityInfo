@@ -10,13 +10,17 @@ $( document ).delegate("#movieTimes", "pageshow", function() {
     };
     $.get('proxy.php', data, function(response){
         var json = $.xml2json(response);
-        console.log(json);
-        displayMoviesNearMe(json.channel.item);
+        displayTheatersNearMe(json.channel.item);
     })
   
-    function displayMoviesNearMe(json) {
-        $.each(json, function(index, item) { 
-            $movieList.append('<li>' + item.title + '</li>');
+    function displayTheatersNearMe(json) {
+        $.each(json, function(index, item) {
+            var desc = '<div>' + item.description + '</div>';
+            //TODO: Display this and link to google maps
+            //var address = ': ' + $(desc).find('p:first').text();
+            var address = '';
+            var movies = $(desc).find('ul').html();
+            $movieList.append('<li>' + item.title + address + '<ul class="details" data-role="listview" style="display:none">'+movies+'</ul></li>');
         });
         $movieList.listview('refresh');
     } 
