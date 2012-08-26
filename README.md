@@ -29,6 +29,8 @@ ESPN: hbmdb4m9qffkentusxkw4n7j shared secret: RMEa3DJAzAMrEXj8N2XBNcDK
 
 Active.com Search: 7mrkcvgjeaj69n7hyaqd93ne
 
+Active.com Golf: 5rddyevhd976bc88pyjpghc9
+
 Weatherbug.com: ngh3w72jsxp43xp4wkpy33ym
 
 7 Day: http://i.wxbug.net/REST/Direct/GetForecast.ashx?zip=37027&nf=1&ih=1&ht=t&ht=i&l=en&c=US&api_key=ngh3w72jsxp43xp4wkpy33ym
