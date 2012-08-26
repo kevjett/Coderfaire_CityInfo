@@ -27,7 +27,7 @@ Bit.ly API: R_c85e096124f9a988431fec5f9c25cd69 username: smumford
 
 ESPN: hbmdb4m9qffkentusxkw4n7j shared secret: RMEa3DJAzAMrEXj8N2XBNcDK
 
-Active.com: 3cv6ddx56q9txezrxb7vjjvf
+Active.com Seaarch: 7mrkcvgjeaj69n7hyaqd93ne
 
 Weatherbug.com: ngh3w72jsxp43xp4wkpy33ym
 
