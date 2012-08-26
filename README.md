@@ -26,3 +26,5 @@ ESPN: hbmdb4m9qffkentusxkw4n7j shared secret: RMEa3DJAzAMrEXj8N2XBNcDK
 Active.com: 3cv6ddx56q9txezrxb7vjjvf
 
 Weatherbug.com: umwv5ngjpwxd8pqspmuq6cmr
+
+Fanfeedr: hkfu6d8axaj6atxzz7xkf7e3
